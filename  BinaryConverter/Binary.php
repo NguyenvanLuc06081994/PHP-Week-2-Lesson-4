@@ -15,13 +15,11 @@ class Binary
     public function push($number)
     {
         $arr =[];
-        for ($i = 0; $i < $number; $i++) {
+        while ($number > 0) {
             $result = (int)($number / 2);
             $number1 = $number % 2;
-            $result2 = (int)($result / 2);
-            $number2 = $result % 2;
-            $number = $result2;
-            array_push($arr,$number1,$number2);
+            $number = $result;
+            array_push($arr,$number1);
         }
          $arrRev = array_reverse($arr);
         return implode("",$arrRev);
@@ -30,4 +28,4 @@ class Binary
 }
 
 $binary = new Binary(20);
-echo ($binary->push(13));
+echo ($binary->push(100));
