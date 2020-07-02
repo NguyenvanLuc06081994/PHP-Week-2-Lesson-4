@@ -17,7 +17,7 @@ class Stack1
         }
     }
 
-    public function pop($arr)
+    public function reserve($arr)
     {
         $arrNew = [];
         for ($i = 0; $i < count($arr); $i++) {
@@ -27,17 +27,13 @@ class Stack1
         return $arrNew;
     }
 
-    public function getStack()
-    {
-        return $this->stack;
-    }
+
 }
-$arr = [1,2,3];
+$arr = [1,2,34,3,44];
 $stack = new Stack1();
 $stack->push($arr);
 echo "<pre>";
-print_r($stack->getStack());
+print_r($stack->reserve($arr));
 
-echo "<pre>";
-print_r($stack->pop($arr));
+
 
